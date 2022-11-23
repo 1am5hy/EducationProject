@@ -1,0 +1,275 @@
+<mujoco model="curiosity">
+    <compiler angle="radian" meshdir="./meshes_mujoco/" inertiagrouprange="0 0"/>
+    <size njmax="500" nconmax="100" />
+    <asset>
+        <texture builtin="checker" height="512" name="texplane" rgb1="0.2 0.3 0.4" rgb2="0.1 0.15 0.2" type="2d" width="512"/>
+        <material name="MatGnd" reflectance="0.5" texture="texplane" texuniform="true"/>
+
+        <mesh name="summit_xls_chassis" file="summit_xls_chassis.stl" />
+        <mesh name="summit_xls_chassis_vis" file="summit_xls_chassis_vis.stl" />
+        <mesh name="summit_xls_chapas_inox_tapas" file="summit_xls_chapas_inox_tapas.stl" />
+        <mesh name="robotnik_logo_chasis" file="robotnik_logo_chasis.stl" />
+        <mesh name="omni_wheel_2_vis" file="omni_wheel_2_vis.stl" />
+        <mesh name="omni_wheel_1_vis" file="omni_wheel_1_vis.stl" />
+        <mesh name="sick_s300_vis" file="sick_s300_vis.stl" />
+        <mesh name="orbbec_astra_vis" file="orbbec_astra_vis.stl" />
+        <mesh name="waist_link_0A_vis" file="waist_link_0A_vis.stl" />
+        <mesh name="waist_link_0A" file="waist_link_0A.stl" />
+        <mesh name="waist_link_0B_vis" file="waist_link_0B_vis.stl" />
+        <mesh name="waist_link_0B" file="waist_link_0B.stl" />
+        <mesh name="waist_link_1_vis" file="waist_link_1_vis.stl" />
+        <mesh name="waist_link_1" file="waist_link_1.stl" />
+        <mesh name="waist_bar_L12A_vis" file="waist_bar_L12A_vis.stl" />
+        <mesh name="waist_bar_L12A" file="waist_bar_L12A.stl" />
+        <mesh name="waist_bar_R12A_vis" file="waist_bar_R12A_vis.stl" />
+        <mesh name="waist_bar_R12A" file="waist_bar_R12A.stl" />
+        <mesh name="waist_bar_L12B_vis" file="waist_bar_L12B_vis.stl" />
+        <mesh name="waist_bar_L12B" file="waist_bar_L12B.stl" />
+        <mesh name="waist_bar_R12B_vis" file="waist_bar_R12B_vis.stl" />
+        <mesh name="waist_bar_R12B" file="waist_bar_R12B.stl" />
+        <mesh name="waist_link_2_vis" file="waist_link_2_vis.stl" />
+        <mesh name="waist_link_2" file="waist_link_2.stl" />
+        <mesh name="waist_bar_R23A_vis" file="waist_bar_R23A_vis.stl" />
+        <mesh name="waist_bar_R23A" file="waist_bar_R23A.stl" />
+        <mesh name="waist_bar_L23A_vis" file="waist_bar_L23A_vis.stl" />
+        <mesh name="waist_bar_L23A" file="waist_bar_L23A.stl" />
+        <mesh name="waist_bar_R23B_vis" file="waist_bar_R23B_vis.stl" />
+        <mesh name="waist_bar_R23B" file="waist_bar_R23B.stl" />
+        <mesh name="waist_bar_L23B_vis" file="waist_bar_L23B_vis.stl" />
+        <mesh name="waist_bar_L23B" file="waist_bar_L23B.stl" />
+        <mesh name="waist_link_3_vis" file="waist_link_3_vis.stl" />
+        <mesh name="waist_link_3" file="waist_link_3.stl" />
+        <mesh name="arms_bracket_vis" file="arms_bracket_vis.stl" />
+        <mesh name="arms_bracket" file="arms_bracket.stl" />
+        <mesh name="panda_link0_vis" file="panda_link0_vis.stl" />
+        <mesh name="panda_link0" file="panda_link0.stl" />
+        <mesh name="panda_link1_vis" file="panda_link1_vis.stl" />
+        <mesh name="panda_link1" file="panda_link1.stl" />
+        <mesh name="panda_link2_vis" file="panda_link2_vis.stl" />
+        <mesh name="panda_link2" file="panda_link2.stl" />
+        <mesh name="panda_link3_vis" file="panda_link3_vis.stl" />
+        <mesh name="panda_link3" file="panda_link3.stl" />
+        <mesh name="panda_link4_vis" file="panda_link4_vis.stl" />
+        <mesh name="panda_link4" file="panda_link4.stl" />
+        <mesh name="panda_link5_vis" file="panda_link5_vis.stl" />
+        <mesh name="panda_link5" file="panda_link5.stl" />
+        <mesh name="panda_link6_vis" file="panda_link6_vis.stl" />
+        <mesh name="panda_link6" file="panda_link6.stl" />
+        <mesh name="panda_link7_vis" file="panda_link7_vis.stl" />
+        <mesh name="panda_link7" file="panda_link7.stl" />
+        <mesh name="base_vis" file="base_vis.stl" />
+        <mesh name="driver_vis" file="driver_vis.stl" scale="0.001 0.001 0.001" />
+        <mesh name="coupler_vis" file="coupler_vis.stl" scale="0.001 0.001 0.001" />
+        <mesh name="follower_vis" file="follower_vis.stl" scale="0.001 0.001 0.001" />
+        <mesh name="pad_vis" file="pad_vis.stl" scale="0.001 0.001 0.001" />
+        <mesh name="spring_link_vis" file="spring_link_vis.stl" scale="0.001 0.001 0.001" />
+        <material name="floor_mat" specular="0" shininess="0.5" reflectance="0" rgba="0.2 0.2 0.2 1"></material>
+    </asset>
+    <worldbody>
+
+
+        <geom material="MatGnd" name="ground" size="5 5 10" type="plane"/>
+        <light diffuse="0.8 0.8 0.8" dir="-0.301511 -0.301511 -0.904534" pos="1 1 3"/>
+        <light diffuse="0.8 0.8 0.8" dir="-0.301511 0.301511 -0.904534" pos="1 -1 3"/>
+        <light diffuse="0.8 0.8 0.8" dir="0.316228 0 -0.948683" pos="-1 0 3"/>
+
+
+        <geom size="0.0005 0.0005 0.0005" type="box" contype="0" conaffinity="0" group="1" />
+        <geom pos="0 0 0.127" type="mesh" contype="0" conaffinity="0" group="1" rgba="0 0 0 1" mesh="summit_xls_chassis" />
+        <geom pos="0 0 0.127" type="mesh" rgba="0 0 0 1" mesh="summit_xls_chassis_vis" />
+        <geom pos="0 0 0.50762" type="mesh" contype="0" conaffinity="0" group="1" mesh="summit_xls_chapas_inox_tapas" />
+        <geom pos="0 0.28931 0.41762" type="mesh" contype="0" conaffinity="0" group="1" mesh="robotnik_logo_chasis" />
+        <geom pos="0 -0.28931 0.41762" quat="0 0 0 1" type="mesh" contype="0" conaffinity="0" group="1" mesh="robotnik_logo_chasis" />
+        <geom pos="0.345 0 0.127" quat="0.707107 0 0 -0.707107" type="mesh" contype="0" conaffinity="0" group="1" mesh="robotnik_logo_chasis" />
+        <geom pos="-0.345 0 0.127" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="1" mesh="robotnik_logo_chasis" />
+        <geom size="0.0005 0.0005 0.0005" pos="0.127 -0.129 0.339" type="box" contype="0" conaffinity="0" group="1" />
+        <geom pos="0.2865 -0.20894 0.4243" quat="0 0.92388 -0.382683 0" type="mesh" mesh="sick_s300_vis" />
+        <geom pos="0.2865 -0.20894 0.4243" quat="0 0.92388 -0.382683 0" type="mesh" contype="0" conaffinity="0" group="1" mesh="sick_s300_vis" />
+        <geom pos="-0.2865 0.20894 0.4243" quat="0 -0.382683 -0.92388 0" type="mesh" mesh="sick_s300_vis" />
+        <geom pos="-0.2865 0.20894 0.4243" quat="0 -0.382683 -0.92388 0" type="mesh" contype="0" conaffinity="0" group="1" mesh="sick_s300_vis" />
+        <geom pos="0.3585 -0.0125 0.36262" type="mesh" contype="0" conaffinity="0" group="1" mesh="orbbec_astra_vis" />
+        <geom pos="0.3585 -0.0125 0.36262" type="mesh" mesh="orbbec_astra_vis" />
+        <geom pos="0 0 0.507" type="mesh" contype="0" conaffinity="0" group="1" mesh="waist_link_0A_vis" />
+        <geom pos="0 0 0.507" type="mesh" mesh="waist_link_0A" />
+        <body name="summit_xl_front_right_wheel_link" pos="0.2225 -0.2045 0.127">
+            <inertial pos="0 0 0" quat="0.707107 0 0 0.707107" mass="6.5" diaginertia="0.0524193 0.0303095 0.0303095" />
+            <joint name="summit_xl_front_right_wheel_joint" pos="0 0 0" axis="0 1 0" />
+            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.2 0.2 0.2 1" mesh="omni_wheel_2_vis" />
+            <geom size="0.127 0.0435" quat="0.707107 0.707107 0 0" type="cylinder" rgba="0.2 0.2 0.2 1" />
+        </body>
+        <body name="summit_xl_front_left_wheel_link" pos="0.2225 0.2045 0.127">
+            <inertial pos="0 0 0" quat="0.707107 0 0 0.707107" mass="6.5" diaginertia="0.0524193 0.0303095 0.0303095" />
+            <joint name="summit_xl_front_left_wheel_joint" pos="0 0 0" axis="0 1 0" />
+            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.2 0.2 0.2 1" mesh="omni_wheel_1_vis" />
+            <geom size="0.127 0.0435" quat="0.707107 0.707107 0 0" type="cylinder" rgba="0.2 0.2 0.2 1" />
+        </body>
+        <body name="summit_xl_back_left_wheel_link" pos="-0.2225 0.2045 0.127">
+            <inertial pos="0 0 0" quat="0.707107 0 0 0.707107" mass="6.5" diaginertia="0.0524193 0.0303095 0.0303095" />
+            <joint name="summit_xl_back_left_wheel_joint" pos="0 0 0" axis="0 1 0" />
+            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.2 0.2 0.2 1" mesh="omni_wheel_1_vis" />
+            <geom size="0.127 0.0435" quat="0.707107 0.707107 0 0" type="cylinder" rgba="0.2 0.2 0.2 1" />
+        </body>
+        <body name="summit_xl_back_right_wheel_link" pos="-0.2225 -0.2045 0.127">
+            <inertial pos="0 0 0" quat="0.707107 0 0 0.707107" mass="6.5" diaginertia="0.0524193 0.0303095 0.0303095" />
+            <joint name="summit_xl_back_right_wheel_joint" pos="0 0 0" axis="0 1 0" />
+            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.2 0.2 0.2 1" mesh="omni_wheel_2_vis" />
+            <geom size="0.127 0.0435" quat="0.707107 0.707107 0 0" type="cylinder" rgba="0.2 0.2 0.2 1" />
+        </body>
+        <body name="waist_link_0B" pos="0 0 0.71719">
+            <inertial pos="0 0 0" mass="11.4" diaginertia="0.02 0.02 0.02" />
+            <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="waist_link_0B_vis" />
+            <geom type="mesh" mesh="waist_link_0B" />
+            <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="waist_link_1_vis" />
+            <geom type="mesh" mesh="waist_link_1" />
+            <body name="waist_bar_L12A" pos="0 0.038 0">
+                <inertial pos="0 0 0" mass="0.5" diaginertia="0.01 0.01 0.01" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="waist_bar_L12A_vis" />
+                <geom type="mesh" mesh="waist_bar_L12A" />
+                <body name="waist_link_2" pos="-0.24148 -0.038 0.0647">
+                    <inertial pos="0 0 0" mass="2" diaginertia="0.01 0.01 0.01" />
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="waist_link_2_vis" />
+                    <geom type="mesh" mesh="waist_link_2" />
+                    <body name="waist_bar_R23A" pos="0 -0.058 0">
+                        <inertial pos="0 0 0" mass="0.5" diaginertia="0.01 0.01 0.01" />
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="waist_bar_R23A_vis" />
+                        <geom type="mesh" mesh="waist_bar_R23A" />
+                        <body name="waist_link_3" pos="0.24148 0.058 0.0647">
+                            <inertial pos="-0.0176562 0 0.131286" quat="0.998797 0 -0.0490381 0" mass="11.22" diaginertia="0.791594 0.766932 0.657947" />
+                            <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="waist_link_3_vis" />
+                            <geom type="mesh" mesh="waist_link_3" />
+                            <geom pos="-0.13072 0 0.13" type="mesh" contype="0" conaffinity="0" group="1" mesh="arms_bracket_vis" />
+                            <geom pos="-0.13072 0 0.13" type="mesh" mesh="arms_bracket" />
+                            <geom pos="-0.02169 0.07152 0.23007" quat="0.742835 -0.403179 0.525433 0.0977961" type="mesh" contype="0" conaffinity="0" group="1" mesh="panda_link0_vis" />
+                            <geom pos="-0.02169 0.07152 0.23007" quat="0.742835 -0.403179 0.525433 0.0977961" type="mesh" mesh="panda_link0" />
+                            <geom pos="-0.02169 -0.07152 0.23007" quat="0.742835 0.403179 0.525433 -0.0977961" type="mesh" contype="0" conaffinity="0" group="1" mesh="panda_link0_vis" />
+                            <geom pos="-0.02169 -0.07152 0.23007" quat="0.742835 0.403179 0.525433 -0.0977961" type="mesh" mesh="panda_link0" />
+                            <body name="arm_L_link1" pos="0.211996 0.305206 0.270941" quat="0.742835 -0.403179 0.525433 0.0977961">
+                                <inertial pos="0 0 0" mass="2.34" diaginertia="0.3 0.3 0.3" />
+                                <joint name="arm_L_joint1" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" damping="1" />
+                                <geom type="mesh" mesh="panda_link1_vis" />
+                                <body name="arm_L_link2" pos="0 0 0" quat="0.707107 -0.707107 0 0">
+                                    <inertial pos="0 0 0" mass="2.36" diaginertia="0.3 0.3 0.3" />
+                                    <joint name="arm_L_joint2" pos="0 0 0" axis="0 0 1" limited="true" range="-1.7628 1.7628" damping="1" />
+                                    <geom type="mesh" mesh="panda_link2_vis" />
+                                    <body name="arm_L_link3" pos="0 -0.316 0" quat="0.707107 0.707107 0 0">
+                                        <inertial pos="0 0 0" mass="2.38" diaginertia="0.3 0.3 0.3" />
+                                        <joint name="arm_L_joint3" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" damping="1" />
+                                        <geom type="mesh" mesh="panda_link3_vis" />
+                                        <body name="arm_L_link4" pos="0.0825 0 0" quat="0.707107 0.707107 0 0">
+                                            <inertial pos="0 0 0" mass="2.43" diaginertia="0.3 0.3 0.3" />
+                                            <joint name="arm_L_joint4" pos="0 0 0" axis="0 0 1" limited="true" range="-3.0718 -0.0698" damping="1" />
+                                            <geom type="mesh" mesh="panda_link4_vis" />
+                                            <body name="arm_L_link5" pos="-0.0825 0.384 0" quat="0.707107 -0.707107 0 0">
+                                                <inertial pos="0 0 0" mass="3.5" diaginertia="0.3 0.3 0.3" />
+                                                <joint name="arm_L_joint5" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" damping="1" />
+                                                <geom type="mesh" mesh="panda_link5_vis" />
+                                                <body name="arm_L_link6" pos="0 0 0" quat="0.707107 0.707107 0 0">
+                                                    <inertial pos="0 0 0" mass="1.47" diaginertia="0.3 0.3 0.3" />
+                                                    <joint name="arm_L_joint6" pos="0 0 0" axis="0 0 1" limited="true" range="-0.0175 3.7525" damping="1" />
+                                                    <geom type="mesh" mesh="panda_link6_vis" />
+                                                    <body name="arm_L_link7" pos="0.088 0 0" quat="0.707107 0.707107 0 0">
+                                                        <inertial pos="0 0 0.0602632" quat="0.5 0.5 -0.5 0.5" mass="0.95" diaginertia="0.7 0.58748 0.58748" />
+                                                        <joint name="arm_L_joint7" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" damping="1" />
+                                                        <geom type="mesh" mesh="panda_link7_vis" />
+                                       
+                                                        <geom pos="0 0 0.107" quat="0.707105 0 -0.707108 0" type="mesh" contype="0" conaffinity="0" group="1" mesh="base_vis" />
+                                                        <geom size="0.04 0.0225" pos="0 0 0.122" type="cylinder" />
+                                                        <geom size="0.015 0.015 0.03" pos="0 0 0.167" type="box" />
+                                    
+                                  
+                                                    </body>
+                                                </body>
+                                            </body>
+                                        </body>
+                                    </body>
+                                </body>
+                            </body>
+                            <body name="arm_R_link1" pos="0.211996 -0.305206 0.270941" quat="0.742835 0.403179 0.525433 -0.0977961">
+                                <inertial diaginertia="0.70337 0.70661 0.009117" mass="4.970684" pos="0.003875 0.002081 0"/>
+                                <joint name="arm_R_joint1" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" damping="1" />
+                                <geom type="mesh" mesh="panda_link1_vis" />
+                                <body name="arm_R_link2" pos="0 0 0" quat="0.707107 -0.707107 0 0">
+                                    <inertial diaginertia="0.007962 0.02811 0.025995" mass="0.646926" pos="-3.141e-03 -2.872e-02 3.495e-03"/>
+                                    <joint name="arm_R_joint2" pos="0 0 0" axis="0 0 1" limited="true" range="-1.7628 1.7628" damping="1" />
+                                    <geom type="mesh" mesh="panda_link2_vis" />
+                                    <body name="arm_R_link3" pos="0 -0.316 0" quat="0.707107 0.707107 0 0">
+                                        <inertial diaginertia="0.037242 0.036155 0.01083" mass="3.228604" pos="2.7518e-02 3.9252e-02 -6.6502e-02"/>
+                                        <joint name="arm_R_joint3" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" damping="1" />
+                                        <geom type="mesh" mesh="panda_link3_vis" />
+    
+                                        <body name="arm_R_link4" pos="0.0825 0 0" quat="0.707107 0.707107 0 0">
+                                            <inertial diaginertia="0.025853 0.019552 0.028323" mass="3.587895" pos="-5.317e-02 1.04419e-01 2.7454e-02"/>
+                                            <joint name="arm_R_joint4" pos="0 0 0" axis="0 0 1" limited="true" range="-3.0718 -0.0698" damping="1" />
+                                            <geom type="mesh" mesh="panda_link4_vis" />
+                                            <body name="arm_R_link5" pos="-0.0825 0.384 0" quat="0.707107 -0.707107 0 0">
+                                                <inertial diaginertia="0.035549 0.029474 0.008627" mass="1.225946" pos="-1.1953e-02 4.1065e-02 -3.8437e-02"/>
+                                                <joint name="arm_R_joint5" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" damping="1" />
+                                                <geom type="mesh" mesh="panda_link5_vis" />
+              
+                                                <body name="arm_R_link6" pos="0 0 0" quat="0.707107 0.707107 0 0">
+                                                    <inertial diaginertia="0.001964 0.004354 0.005433" mass="1.666555" pos="6.0149e-02 -1.4117e-02 -1.0517e-02"/>
+                                                    <joint name="arm_R_joint6" pos="0 0 0" axis="0 0 1" limited="true" range="-0.0175 3.7525" damping="1" />
+                                                    <geom type="mesh" mesh="panda_link6_vis" />
+                                             
+                                                    <body name="arm_R_link7" pos="0.088 0 0" quat="0.707107 0.707107 0 0">
+                                                        <inertial diaginertia="0.012516 0.010027 0.004815" mass="7.35522e-01" pos="1.0517e-02 -4.252e-03 6.1597e-02"/>
+                                                        <joint name="arm_R_joint7" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" damping="1" />
+                                                        <geom type="mesh" mesh="panda_link7_vis" />
+                                         
+                                                        <geom pos="0 0 0.107" quat="0.707105 0 -0.707108 0" type="mesh" contype="0" conaffinity="0" group="1" mesh="base_vis" />
+                                                        <geom size="0.04 0.0225" pos="0 0 0.122" type="cylinder" />
+                                                        <geom size="0.015 0.015 0.03" pos="0 0 0.167" type="box" />
+                                                        
+                                                    </body>
+                                                </body>
+                                            </body>
+                                        </body>
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                    <body name="waist_bar_L23A" pos="0 0.058 0">
+                        <inertial pos="0 0 0" mass="0.5" diaginertia="0.01 0.01 0.01" />
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="waist_bar_L23A_vis" />
+                        <geom type="mesh" mesh="waist_bar_L23A" />
+                    </body>
+                    <body name="waist_bar_R23B" pos="0 -0.058 0.1">
+                        <inertial pos="0 0 0" mass="0.5" diaginertia="0.01 0.01 0.01" />
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="waist_bar_R23B_vis" />
+                        <geom type="mesh" mesh="waist_bar_R23B" />
+                    </body>
+                    <body name="waist_bar_L23B" pos="0 0.058 0.1">
+                        <inertial pos="0 0 0" mass="0.5" diaginertia="0.01 0.01 0.01" />
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="waist_bar_L23B_vis" />
+                        <geom type="mesh" mesh="waist_bar_L23B" />
+                    </body>
+                </body>
+            </body>
+            <body name="waist_bar_R12A" pos="0 -0.038 0">
+                <inertial pos="0 0 0" mass="0.5" diaginertia="0.01 0.01 0.01" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="waist_bar_R12A_vis" />
+                <geom type="mesh" mesh="waist_bar_R12A" />
+            </body>
+            <body name="waist_bar_L12B" pos="0.0866 0.038 0.05">
+                <inertial pos="0 0 0" mass="0.4" diaginertia="0.01 0.01 0.01" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="waist_bar_L12B_vis" />
+                <geom type="mesh" mesh="waist_bar_L12B" />
+            </body>
+            <body name="waist_bar_R12B" pos="0.0866 -0.038 0.05">
+                <inertial pos="0 0 0" mass="0.4" diaginertia="0.01 0.01 0.01" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="waist_bar_R12B_vis" />
+                <geom type="mesh" mesh="waist_bar_R12B" />
+            </body>
+        </body>
+    </worldbody>
+        <actuator>
+        <general ctrllimited="true" ctrlrange="-80 80" joint="arm_R_joint1" name="panda0_joint1"/>
+        <general ctrllimited="true" ctrlrange="-80 80" joint="arm_R_joint2" name="panda0_joint2"/>
+        <general ctrllimited="true" ctrlrange="-80 80" joint="arm_R_joint3" name="panda0_joint3"/>
+        <general ctrllimited="true" ctrlrange="-80 80" joint="arm_R_joint4" name="panda0_joint4"/>
+        <general ctrllimited="true" ctrlrange="-80 80" joint="arm_R_joint5" name="panda0_joint5"/>
+        <general ctrllimited="true" ctrlrange="-12 12" joint="arm_R_joint6" name="panda0_joint6"/>
+        <general ctrllimited="true" ctrlrange="-12 12" joint="arm_R_joint7" name="panda0_joint7"/>
+    </actuator>
+</mujoco>
